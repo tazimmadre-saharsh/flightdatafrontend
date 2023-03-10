@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom"
 
 import "./App.css"
 
-export default function Form(){
+export default function DepartureForm(){
     
 
     const [error, setError] = useState();
@@ -30,7 +30,7 @@ export default function Form(){
             }
             setLoading(1);
             console.log("Data:", data);
-            axios.post("https://tame-ruby-zebra-ring.cyclic.app/flightdataupload", data).then(()=>{
+            axios.post("http://localhost:4000/departuredataupload", data).then(()=>{
                 setError("Submitted Successfully");
             })
 
@@ -92,15 +92,13 @@ export default function Form(){
 
                 <label style={{fontSize: "large", fontFamily:"Arial, Helvetica, sans-serif;", margin:"5px"}}>Status:</label><br></br>
 
-                <select placeholder="Select">
-                    <option value={"Departed"}>Departed</option>
-                    <option value={"Delayed"}>Delayed</option>
-                    <option value={"On Time"}>On Time</option>
-                    <option value={"Cancelled"}>Cancelled</option>
-                </select><br/><br/>
-                {/* <input type={""} onChange={(e)=>{
-                    setStatus(e.target.value);
-                }}/> <br/><br/> */}
+                <select value={status} onChange={(e) => setStatus(e.target.value)}>
+                    <option value="">Select</option>
+                    <option value="Departed">Departed</option>
+                    <option value="Delayed">Delayed</option>
+                    <option value="On Time">On Time</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select><br></br><br></br>
 
                 
                 <button onClick={()=>{

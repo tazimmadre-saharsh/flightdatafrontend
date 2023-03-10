@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import {useNavigate} from "react-router-dom"
 import './App.css'
 
-export default function Data(){
+export default function DepartureData(){
 
     const navigate = useNavigate();
 
     const [data, setData] = useState();
     useEffect(() => {
-        axios.get('https://tame-ruby-zebra-ring.cyclic.app/getData').then((response)=>{
+        axios.get('http://localhost:4000/getdepartureData').then((response)=>{
             console.log(response.data)
             setData(response.data)
         }).catch(error => {
@@ -25,6 +25,12 @@ export default function Data(){
         <body >
 
             <h1>Flight Details</h1>
+
+
+            <a href="/addDeparture" rel="noopener noreferrer" style={{textDecoration:"none", color:"black"}}>
+          Add Departure
+        </a>
+        <br></br><br></br>
 
             <table style={{border: "3px solid rgb(0, 0, 0)"}}>
                 <tr>
