@@ -2,14 +2,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
+import { SECRETS } from './constants';
 
-export default function ArrivalData() {
+export default function ArrivalData () {
   const navigate = useNavigate();
 
   const [data, setData] = useState();
   useEffect(() => {
     axios
-      .get("http://localhost:4000/getarrivalData")
+      .get(`${SECRETS.url}/getarrivalData`)
       .then((response) => {
         console.log(response.data);
         setData(response.data);
@@ -21,7 +22,7 @@ export default function ArrivalData() {
 
   const handleDelete = (flightNumber) => {
     axios
-      .delete(`http://localhost:4000/deleteArrivaldata/${flightNumber}`)
+      .delete(`${SECRETS.url}/deleteArrivaldata/${flightNumber}`)
       .then((response) => {
         console.log(response.data);
         setData(data.filter((item) => item.flightNumber !== flightNumber));
