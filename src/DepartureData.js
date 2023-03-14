@@ -1,12 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"
 import './App.css'
 import { SECRETS } from './constants';
 
 export default function DepartureData () {
 
-    const navigate = useNavigate();
 
     const [data, setData] = useState();
     useEffect(() => {
@@ -18,9 +16,6 @@ export default function DepartureData () {
         });
     }, []);
 
-    const next = () => {
-
-    }
     return (
         <>
             <body >

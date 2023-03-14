@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"
 
 import "./App.css"
 import { SECRETS } from './constants';
@@ -13,7 +12,6 @@ export default function ArrivalForm () {
 
     const [loading, setLoading] = useState();
 
-    const navigate = useNavigate();
     //*************************************************************** */
     const [flightNumber, setFlightNumber] = useState();
     const [airline, setAirline] = useState();

@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"
 
 import "./App.css"
 import { SECRETS } from './constants';
@@ -11,8 +10,6 @@ export default function AddFAQs () {
     const [error, setError] = useState();
 
     const [loading, setLoading] = useState();
-
-    const navigate = useNavigate();
 
     const [question, setQuestion] = useState();
     const [answer, setAnswer] = useState();
@@ -63,10 +60,10 @@ export default function AddFAQs () {
                                 submitData();
                             }} disabled={loading}>Submit</button>
 
-                            {loading && loading == 1 && <>
+                            {loading && loading === 1 && <>
                                 Please wait loading
                             </>}
-                            {loading && loading == 0 && <>
+                            {loading && loading === 0 && <>
                                 Done uploading
                             </>}
 

@@ -10,35 +10,34 @@ import Navbar from "./header/index.js";
 import {
   BrowserRouter as Router,
   Route,
-  Navigate,
   Routes,
 } from "react-router-dom";
 
-function App() {
+function App () {
   return (
-    
+
     <>
       <Router>
-        
+
 
         <Navbar />
-      <Routes>
-        <Route path='/' exact component={Home} />
-        <Route path='/arrivalData' component={ArrivalData} />
-        <Route path='/departureData' component={DepartureData} />
-        <Route path='/FAQs' component={FAQs} />
-      </Routes>
+        <Routes>
+          <Route path='/' exact component={Home} />
+          <Route path='/arrivalData' component={ArrivalData} />
+          <Route path='/departureData' component={DepartureData} />
+          <Route path='/FAQs' component={FAQs} />
+        </Routes>
 
 
-      <main>
+        <main>
           <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/addDeparture" element={<DepartureForm/>}/>
-          <Route path="/departureData" element={<DepartureData/>}/>\
-          <Route path="/addArrival" element={<ArrivalForm/>}/>
-          <Route path="/arrivalData" element={<ArrivalData/>}/>
-          <Route path="/FAQs" element={<FAQs/>}/>
-          <Route path="/addFAQ" element={<AddFAQs/>}/>
+            <Route path="/" element={<Home />} />
+            <Route path="/addDeparture" element={<DepartureForm />} />
+            <Route path="/departureData" element={<DepartureData />} />\
+            <Route path="/addArrival" element={<ArrivalForm />} />
+            <Route path="/arrivalData" element={<ArrivalData />} />
+            <Route path="/FAQs" element={<FAQs />} />
+            <Route path="/addFAQ" element={<AddFAQs />} />
           </Routes>
         </main>
 
@@ -49,7 +48,7 @@ function App() {
 
 
     </>
-    
+
   );
 }
 
